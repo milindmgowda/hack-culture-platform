@@ -10,7 +10,7 @@ import { useForm } from "react-hook-form";
 import { Button } from "../ui/button";
 import FormError from "../form-error";
 import FormSuccess from "../form-success";
-import { login } from "@/actions/login";
+import { register } from "@/actions/login";
 import { useState, useTransition } from "react";
 
 const RegisterForm = () => {
@@ -31,7 +31,7 @@ const RegisterForm = () => {
         setError(undefined);
         setSuccess(undefined);
         startTransition(async () => {
-            const {error, success} = await login(values);
+            const {error, success} = await register(values);
             setError(error);
             setSuccess(success);
         })
